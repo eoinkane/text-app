@@ -1,0 +1,20 @@
+{
+  "name": "text-app",
+  "version": "1.0.0",
+  "description": "A in-progess app going to be built using React, Node.js & Python",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eoinkane/text-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eoinkane/text-app/issues"
+  },
+  "homepage": "https://github.com/eoinkane/text-app#readme"
+}

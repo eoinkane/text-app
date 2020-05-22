@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Eoin"
+    },
+    {
+      "id": 2,
+      "name": "Chris"
+    }
+  ],
+  "conversations": [
+    {
+      "id": 1,
+      "usersId": [1, 2]
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "sender": 1,
+      "message": "sample text",
+      "conversationsId": 1
+    },
+    {
+      "id": 2,
+      "sender": 2,
+      "message": "sample text",
+      "conversationsId": 1
+    }
+  ]
+}
