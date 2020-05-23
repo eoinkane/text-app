@@ -11,7 +11,6 @@ exports[`HeaderBar Renders 1`] = `
       "entries": Array [
         Object {
           "hash": "",
-          "key": "payza4",
           "pathname": "/",
           "search": "",
           "state": undefined,
@@ -25,7 +24,6 @@ exports[`HeaderBar Renders 1`] = `
       "listen": [Function],
       "location": Object {
         "hash": "",
-        "key": "payza4",
         "pathname": "/",
         "search": "",
         "state": undefined,

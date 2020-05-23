@@ -9,7 +9,7 @@ import { MemoryRouter, Link } from "react-router-dom";
 describe("HeaderBar", () => {
   it("Renders", () => {
     const headerBar = shallow(
-      <MemoryRouter>
+      <MemoryRouter keyLength={0}>
         <HeaderBar />
       </MemoryRouter>
     );
@@ -26,7 +26,7 @@ describe("HeaderBar", () => {
 
   it('Goes to "/" when home button pressed', () => {
     const headerBar = shallow(
-      <MemoryRouter initialEntries={["/test_url"]}>
+      <MemoryRouter initialEntries={["/test_url"]} keyLength={0}>
         <HeaderBar />
       </MemoryRouter>
     );
