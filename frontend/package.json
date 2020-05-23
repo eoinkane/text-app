@@ -57,6 +57,12 @@
     "ts-jest": "^26.0.0"
   },
   "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 98,
