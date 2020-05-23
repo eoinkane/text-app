@@ -11,7 +11,7 @@ exports[`HeaderBar Renders 1`] = `
       "entries": Array [
         Object {
           "hash": "",
-          "key": "i26x2k",
+          "key": "tthdn8",
           "pathname": "/",
           "search": "",
           "state": undefined,
@@ -25,7 +25,7 @@ exports[`HeaderBar Renders 1`] = `
       "listen": [Function],
       "location": Object {
         "hash": "",
-        "key": "i26x2k",
+        "key": "tthdn8",
         "pathname": "/",
         "search": "",
         "state": undefined,
@@ -39,7 +39,7 @@ exports[`HeaderBar Renders 1`] = `
 </Router>
 `;
 
-exports[`HeaderBar Renders link to Google with classname 1`] = `
+exports[`HeaderBar Renders with correct text 1`] = `
 <div
   className="makeStyles-root-1"
 >
@@ -64,7 +64,7 @@ exports[`HeaderBar Renders link to Google with classname 1`] = `
         className="makeStyles-title-3"
         variant="h6"
       >
-        News
+        Messages
       </WithStyles(ForwardRef(Typography))>
       <WithStyles(ForwardRef(Button))
         color="inherit"

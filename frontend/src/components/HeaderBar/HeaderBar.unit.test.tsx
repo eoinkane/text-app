@@ -16,11 +16,11 @@ describe("HeaderBar", () => {
     expect(headerBar).toMatchSnapshot();
   });
 
-  it("Renders link to Google with classname", () => {
+  it("Renders with correct text", () => {
     const headerBar = shallow(<HeaderBar />);
 
     expect(headerBar).toMatchSnapshot();
-    expect(headerBar.find(Typography).text()).toEqual("News");
+    expect(headerBar.find(Typography).text()).toEqual("Messages");
     expect(headerBar.find(Button).text()).toEqual("Login");
   });
 
