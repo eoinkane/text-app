@@ -1,5 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HeaderBar Renders 1`] = `ShallowWrapper {}`;
+exports[`HeaderBar Renders 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "canGo": [Function],
+      "createHref": [Function],
+      "entries": Array [
+        Object {
+          "hash": "",
+          "key": "i26x2k",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+      ],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "index": 0,
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "key": "i26x2k",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <ButtonAppBar />
+</Router>
+`;
 
-exports[`HeaderBar Renders link to Google with classname 1`] = `ShallowWrapper {}`;
+exports[`HeaderBar Renders link to Google with classname 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(AppBar))
+    position="static"
+  >
+    <WithStyles(ForwardRef(Toolbar))>
+      <Link
+        className="makeStyles-link-4"
+        to="/"
+      >
+        <WithStyles(ForwardRef(IconButton))
+          aria-label="menu"
+          className="makeStyles-menuButton-2"
+          color="inherit"
+          edge="start"
+        >
+          <MenuIcon />
+        </WithStyles(ForwardRef(IconButton))>
+      </Link>
+      <WithStyles(ForwardRef(Typography))
+        className="makeStyles-title-3"
+        variant="h6"
+      >
+        News
+      </WithStyles(ForwardRef(Typography))>
+      <WithStyles(ForwardRef(Button))
+        color="inherit"
+      >
+        Login
+      </WithStyles(ForwardRef(Button))>
+    </WithStyles(ForwardRef(Toolbar))>
+  </WithStyles(ForwardRef(AppBar))>
+</div>
+`;

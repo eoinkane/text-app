@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -18,6 +19,9 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       flexGrow: 1,
     },
+    link: {
+      color: "#fff",
+    },
   })
 );
 
@@ -28,16 +32,18 @@ const ButtonAppBar: React.FC = () => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
+          <Link className={classes.link} to={"/"}>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+            >
+              <MenuIcon />
+            </IconButton>
+          </Link>
           <Typography variant="h6" className={classes.title}>
-            News
+            Messages
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
