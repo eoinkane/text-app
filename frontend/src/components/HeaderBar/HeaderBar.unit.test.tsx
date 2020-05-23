@@ -33,6 +33,6 @@ describe("HeaderBar", () => {
 
     headerBar.find(HeaderBar).dive().find(Link).simulate("click");
 
-    expect(location.pathname).toBe("/");
+    expect(window.location.pathname).toBe("/");
   });
 });
