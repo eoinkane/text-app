@@ -1,6 +1,5 @@
 import React from "react";
 import HeaderBarComponent from "./index";
-import { addDecorator } from "@storybook/react";
 import { linkTo } from "@storybook/addon-links";
 import StoryRouter from "storybook-react-router";
 
