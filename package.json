@@ -7,7 +7,7 @@
     "test:frontend": "cd frontend && npm run test:no-watcher && cd ../",
     "test": "npm-run-all test:* ",
     "lint:frontend": "cd frontend && npm run lint && cd ../",
-        "lint": "npm-run-all lint:*",
+    "lint": "npm-run-all lint:*",
     "prettier-staged": "lint-staged",
     "prettier": "prettier --write ."
   },
@@ -35,7 +35,7 @@
     }
   },
   "lint-staged": {
-     "*.{json, md}": [
+     "*.{json}": [
       "prettier -write"
     ],
     "frontend/src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
