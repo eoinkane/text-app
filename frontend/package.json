@@ -27,7 +27,8 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "clean-tests": "find ./src -type d  -name '__snapshots__' -exec rm -rf {} +",
-    "create-component": "echo -n \"Please enter name of new component \n In PascalCase\n\"; read varname; FOLDER=\"./src/components/$varname\"; mkdir $FOLDER; touch $FOLDER/index.tsx; touch $FOLDER/$varname.stories.tsx; touch $FOLDER/$varname.unit.test.tsx;"
+    "create-component": "echo -n \"Please enter name of new component \n In PascalCase\n\"; read varname; FOLDER=\"./src/components/$varname\"; mkdir $FOLDER; touch $FOLDER/index.tsx; touch $FOLDER/$varname.stories.tsx; touch $FOLDER/$varname.unit.test.tsx;",
+    "lint": "eslint src --ext .tsx --cache"
   },
   "eslintConfig": {
     "extends": "react-app"
