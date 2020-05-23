@@ -4,17 +4,12 @@
   "description": "A in-progess app going to be built using React, Node.js & Python",
   "main": "index.js",
   "scripts": {
-    "pretest:frontend": "cd frontend",
-    "test:frontend": "npm run test --watchAll=false",
-    "posttest:frontend": "cd ../",
-    "test": "npm-run-all test:*",
-    "prelint:frontend": "cd frontend",
-    "lint:frontend": "npm run lint",
-
-
-          "postlint:frontend": "cd ../",
-    "lint": "npm-run-all lint:*",
-    "prettier": "lint-staged"
+    "test:frontend": "cd frontend && npm run test:no-watcher && cd ../",
+    "test": "npm-run-all test:* ",
+    "lint:frontend": "cd frontend && npm run lint && cd ../",
+        "lint": "npm-run-all lint:*",
+    "prettier-staged": "lint-staged",
+    "prettier": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -35,8 +30,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm-run-all lint prettier test",
-      "pre-push": "npm-run-all lint prettier test"
+      "pre-commit": "npm-run-all lint prettier-staged test",
+      "pre-push": "npm-run-all lint prettier-staged test"
     }
   },
   "lint-staged": {
