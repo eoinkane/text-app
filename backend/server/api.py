@@ -44,17 +44,17 @@ def verify_password(username, password):
 @auth.login_required
 def catch_all(path):
     if request.method == "GET":
-        r = requests.get(f"http://localhost:3000{request.path}")
+        r = requests.get(f"http://localhost:3000{request.path}", headers={"origin": "flask-server"})
     if request.method == "POST":
-        r = requests.post(f"http://localhost:3000{request.path}", request.get_json(()))
+        r = requests.post(f"http://localhost:3000{request.path}", request.get_json(()), headers={"origin": "flask-server"})
     if request.method == "PUT":
-        r = requests.put(f"http://localhost:3000{request.path}", request.get_json(()))
+        r = requests.put(f"http://localhost:3000{request.path}", request.get_json(()), headers={"origin": "flask-server"})
     if request.method == "PATCH":
-        r = requests.patch(f"http://localhost:3000{request.path}", request.get_json(()))
+        r = requests.patch(f"http://localhost:3000{request.path}", request.get_json(()), headers={"origin": "flask-server"})
     if request.method == "DELETE":
-        r = requests.delete(f"http://localhost:3000{request.path}")
+        r = requests.delete(f"http://localhost:3000{request.path}", headers={"origin": "flask-server"})
     if request.method == "OPTIONS":
-        r = requests.options(f"http://localhost:3000{request.path}")
+        r = requests.options(f"http://localhost:3000{request.path}", headers={"origin": "flask-server"})
 
     return jsonify(r.json()), r.status_code, r.headers
 
@@ -70,7 +70,7 @@ def new_user():
     if User.query.filter_by(username = username).first() is not None:
         abort(400) # existing user
     user = User(username = username, first_name = first_name, last_name = last_name)
-    existing_user_request = requests.get(f"http://localhost:3000/users?userName_like={username}")
+    existing_user_request = requests.get(f"http://localhost:3000/users?userName_like={username}", headers={"origin": "flask-server"})
     if len((existing_user_request.json())) != 0:
         abort(400)
 
@@ -79,7 +79,7 @@ def new_user():
         "userName": user.username,
         "firstName": user.first_name,
         "lastName": user.last_name
-    })
+    }, headers={"origin": "flask-server"})
 
     user.hash_password(password)
     db.session.add(user)
