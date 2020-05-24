@@ -22,14 +22,14 @@ export const Message = () => {
           margin: "20px 0",
         }}
       >
-        <MessageComponent left={true} text={text} />
+        <MessageComponent left>{text}</MessageComponent>
       </Container>
 
       <Typography style={{ textAlign: "center", paddingBottom: 10 }}>
         Right Aligned Message
       </Typography>
       <Container style={{ backgroundColor: "#f5f5f5", margin: "20px 0" }}>
-        <MessageComponent right={true} text={text} />
+        <MessageComponent right>{text}</MessageComponent>
       </Container>
     </Container>
   );
@@ -44,7 +44,9 @@ export const CentreMessage = () => {
         Centre Aligned Message
       </Typography>
       <Container style={{ backgroundColor: "#f5f5f5", margin: "20px 0" }}>
-        <MessageComponent right={true} left={true} text={text} />
+        <MessageComponent right={true} left={true}>
+          {text}
+        </MessageComponent>
       </Container>
     </Container>
   );

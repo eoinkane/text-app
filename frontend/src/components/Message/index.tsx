@@ -3,9 +3,7 @@ import cx from "clsx";
 import { Paper, Typography } from "@material-ui/core";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 
-interface MessagePropsBase {
-  text: string;
-}
+interface MessagePropsBase {}
 
 interface MessagePropsLeft extends MessagePropsBase {
   left: boolean;
@@ -37,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Message: React.FC<MessageProps> = ({ text, ...rest }) => {
+const Message: React.FC<MessageProps> = ({ children, ...rest }) => {
   const classes = useStyles();
   return (
     <div
@@ -54,7 +52,7 @@ const Message: React.FC<MessageProps> = ({ text, ...rest }) => {
       )}
     >
       <Paper className={classes.paper} elevation={3}>
-        <Typography>{text}</Typography>
+        <Typography>{children}</Typography>
       </Paper>
     </div>
   );
