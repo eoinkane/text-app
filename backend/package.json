@@ -1,8 +1,8 @@
 {
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "concurrently \"nodemon ./server/server.js\" \"clear\"",
-    "db": "concurrently \" json-server -w ./db/db.json --routes ./db/routes.json \" \"clear\""
+    "start:server": "concurrently \"python ./server/app.py\" \"clear\"",
+    "start:db": "concurrently \" nodemon ./db/index.js \" \"clear\""
   },
   "keywords": [],
   "author": "",
