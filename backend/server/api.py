@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import os
+import requests
 from flask import Flask, abort, request, jsonify, g, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_httpauth import HTTPBasicAuth
@@ -45,14 +46,27 @@ def new_user():
     password = request.json.get('password')
     first_name = request.json.get('firstName')
     last_name = request.json.get('lastName')
+
     if username is None or password is None or first_name is None or last_name is None:
         abort(400) # missing arguments
     if User.query.filter_by(username = username).first() is not None:
         abort(400) # existing user
-    user = User(username = username)
+    user = User(username = username, first_name = first_name, last_name = last_name)
+    existing_user_request = requests.get(f"http://localhost:3000/users?userName_like={username}")
+    if len((existing_user_request.json())) != 0:
+        abort(400)
+
+    # save user model to json db
+    save_user_json_db_request = requests.post("http://localhost:3000/users", data={
+        "userName": user.username,
+        "firstName": user.first_name,
+        "lastName": user.last_name
+    })
+
     user.hash_password(password)
     db.session.add(user)
     db.session.commit()
+
     return jsonify({ 'username': user.username }), 201, {'Location': url_for('get_user', id = user.id, _external = True)}
 
 
