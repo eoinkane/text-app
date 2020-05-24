@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: "10px 0",
     },
     rightAvatarGrid: {
-      marginLeft: "1vw",
       flexBasis: 0,
     },
   })
