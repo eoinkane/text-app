@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:server": "concurrently \"python ./server/app.py\" \"clear\"",
+    "start:server": "concurrently \"python ./server/api.py\" \"clear\"",
     "start:db": "concurrently \" nodemon ./db/index.js \" \"clear\""
   },
   "keywords": [],
