@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Message, { useStyles } from "./index";
+import Message from "./index";
 
 describe("Message", () => {
   const text =

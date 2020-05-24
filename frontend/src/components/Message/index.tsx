@@ -17,7 +17,7 @@ interface MessagePropsRight extends MessagePropsBase {
 
 type MessageProps = MessagePropsLeft | MessagePropsRight;
 
-export const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
