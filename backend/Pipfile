@@ -12,6 +12,7 @@ flask-sqlalchemy = "*"
 sqlalchemy = "*"
 passlib = "*"
 requests = "*"
+basicauth = "*"
 
 [requires]
 python_version = "3.8"
