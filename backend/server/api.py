@@ -39,25 +39,6 @@ def verify_password(username, password):
     g.user = user
     return True
 
-@app.route('/', methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'], defaults={'path': ''})
-@app.route('/<path:path>', methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'])
-@auth.login_required
-def catch_all(path):
-    if request.method == "GET":
-        r = requests.get(f"http://localhost:3000{request.path}", headers={"origin": "flask-server"})
-    if request.method == "POST":
-        r = requests.post(f"http://localhost:3000{request.path}", request.get_json(()), headers={"origin": "flask-server"})
-    if request.method == "PUT":
-        r = requests.put(f"http://localhost:3000{request.path}", request.get_json(()), headers={"origin": "flask-server"})
-    if request.method == "PATCH":
-        r = requests.patch(f"http://localhost:3000{request.path}", request.get_json(()), headers={"origin": "flask-server"})
-    if request.method == "DELETE":
-        r = requests.delete(f"http://localhost:3000{request.path}", headers={"origin": "flask-server"})
-    if request.method == "OPTIONS":
-        r = requests.options(f"http://localhost:3000{request.path}", headers={"origin": "flask-server"})
-
-    return jsonify(r.json()), r.status_code, r.headers
-
 @app.route('/api/users', methods = ['POST'])
 def new_user():
     username = request.json.get('username')
