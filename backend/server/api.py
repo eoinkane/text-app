@@ -6,10 +6,18 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_httpauth import HTTPBasicAuth
 from passlib.apps import custom_app_context as pwd_context
 
+SQLALCHEMY_DATABASE_URI=os.environ.get("SQLALCHEMY_DATABASE_URI")
+SECRET_KEY=os.environ.get("SECRET_KEY")
+
+ADMIN_DB_USER_NAME=os.environ.get("ADMIN_DB_USER_NAME")
+ADMIN_DB_USER_PASSWORD=os.environ.get("ADMIN_DB_USER_PASSWORD")
+
+DB_HOSTNAME=os.environ.get("DB_HOSTNAME")
+
 # initialization
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'the quick brown fox jumps over the lazy dog'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+app.config['SECRET_KEY'] = SECRET_KEY
+app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 
 # extensions
@@ -56,16 +64,16 @@ def new_user():
     if User.query.filter_by(username = username).first() is not None:
         abort(400) # existing user
     user = User(username = username, first_name = first_name, last_name = last_name)
-    existing_user_request = requests.get(f"http://localhost:3000/users?userName_like={username}", auth=("admin", "admin"))
+    existing_user_request = requests.get(f"{DB_HOSTNAME}/users?userName_like={username}", auth=(str(ADMIN_DB_USER_NAME), str(ADMIN_DB_USER_PASSWORD)))
     if len((existing_user_request.json())) != 0:
         abort(400)
 
     # save user model to json db
-    save_user_json_db_request = requests.post("http://localhost:3000/users", data={
+    save_user_json_db_request = requests.post(f"{DB_HOSTNAME}/users", data={
         "userName": user.username,
         "firstName": user.first_name,
         "lastName": user.last_name
-    }, auth=("admin", "admin"))
+    }, auth=(ADMIN_DB_USER_NAME, ADMIN_DB_USER_PASSWORD))
 
     if save_user_json_db_request.status_code != 201:
         abort(502)
@@ -77,23 +85,11 @@ def new_user():
     return jsonify({ 'username': user.username }), 201
 
 
-@app.route('/api/users/<int:id>')
-def get_user(id):
-    user = User.query.get(id)
-    if not user:
-        abort(400)
-    return jsonify({'username': user.username})
-
-@app.route('/api/resource')
-@auth.login_required
-def get_resource():
-    return jsonify({'data': 'Hello, %s!' % g.user.username})
-
 if __name__ == '__main__':
     if not os.path.exists('db.sqlite'):
         db.create_all()
-        user = User(username = "admin", first_name = "Admin", last_name = "User")
-        user.hash_password("admin")
+        user = User(username = ADMIN_DB_USER_NAME, first_name = "Admin", last_name = "User")
+        user.hash_password(ADMIN_DB_USER_PASSWORD)
         db.session.add(user)
         db.session.commit()
     app.run(debug=False)
