@@ -68,7 +68,7 @@ server.use(async (req, res, next) => {
   }
 });
 server.use(router);
-server.listen(process.env.DB_PORT, () => {
+server.listen(parseInt(process.env.DB_PORT), () => {
   console.log("JSON Server is running");
   console.log(process.env.DB_HOSTNAME);
 });
