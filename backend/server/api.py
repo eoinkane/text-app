@@ -39,6 +39,11 @@ def verify_password(username, password):
     g.user = user
     return True
 
+@app.route("/verify_user", methods=['GET'])
+@auth.login_required
+def verify_user():
+    return jsonify({}), 200
+
 @app.route('/api/users', methods = ['POST'])
 def new_user():
     username = request.json.get('username')
