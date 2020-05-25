@@ -29,7 +29,7 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "clean-tests": "find ./src -type d  -name '__snapshots__' -exec rm -rf {} +",
-    "create-component": "echo -n \"Please enter name of new component \n In PascalCase\n\"; read varname; FOLDER=\"./src/components/$varname\"; mkdir $FOLDER; cp ./src/templates/blankComponent/index.tsx $FOLDER/index.tsx; cp ./src/templates/blankComponent/Blank.stories.tsx $FOLDER/$varname.stories.tsx; cp ./src/templates/blankComponent/Blank.unit.test.tsx $FOLDER/$varname.unit.test.tsx;",
+    "create-component": "./create-component.sh",
     "lint": "eslint src --ext .tsx --cache"
   },
   "eslintConfig": {
