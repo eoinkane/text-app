@@ -67,6 +67,9 @@ def new_user():
         "lastName": user.last_name
     }, auth=("admin", "admin"))
 
+    if save_user_json_db_request.status_code != 201:
+        abort(502)
+
     user.hash_password(password)
     db.session.add(user)
     db.session.commit()
