@@ -64,7 +64,7 @@ def new_user():
     if User.query.filter_by(username = username).first() is not None:
         abort(400) # existing user
     user = User(username = username, first_name = first_name, last_name = last_name)
-    existing_user_request = requests.get(f"{DB_HOSTNAME}/users?userName_like={username}", auth=(str(ADMIN_DB_USER_NAME), str(ADMIN_DB_USER_PASSWORD)))
+    existing_user_request = requests.get(f"{DB_HOSTNAME}/users?userName={username}", auth=(str(ADMIN_DB_USER_NAME), str(ADMIN_DB_USER_PASSWORD)))
     if len((existing_user_request.json())) != 0:
         abort(400)
 
