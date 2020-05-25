@@ -90,4 +90,8 @@ def get_resource():
 if __name__ == '__main__':
     if not os.path.exists('db.sqlite'):
         db.create_all()
+        user = User(username = "admin", first_name = "Admin", last_name = "User")
+        user.hash_password("admin")
+        db.session.add(user)
+        db.session.commit()
     app.run(debug=False)
