@@ -27,7 +27,7 @@ try {
       4
     );
 
-    fs.writeFile(dbFilePath, jsonDBserverStructureString, "utf8", (err) => {
+    fs.writeFileSync(dbFilePath, jsonDBserverStructureString, "utf8", (err) => {
       if (err) {
         console.log(
           "An error occured while writing JSON Object to JSON DB File."
