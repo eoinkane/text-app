@@ -56,7 +56,7 @@ def new_user():
     if User.query.filter_by(username = username).first() is not None:
         abort(400) # existing user
     user = User(username = username, first_name = first_name, last_name = last_name)
-    existing_user_request = requests.get(f"http://localhost:3000/users?userName_like={username}", headers={"origin": "flask-server"})
+    existing_user_request = requests.get(f"http://localhost:3000/users?userName_like={username}", auth=("admin", "admin"))
     if len((existing_user_request.json())) != 0:
         abort(400)
 
@@ -65,7 +65,7 @@ def new_user():
         "userName": user.username,
         "firstName": user.first_name,
         "lastName": user.last_name
-    }, headers={"origin": "flask-server"})
+    }, auth=("admin", "admin"))
 
     user.hash_password(password)
     db.session.add(user)
@@ -85,7 +85,6 @@ def get_user(id):
 @auth.login_required
 def get_resource():
     return jsonify({'data': 'Hello, %s!' % g.user.username})
-
 
 if __name__ == '__main__':
     if not os.path.exists('db.sqlite'):
