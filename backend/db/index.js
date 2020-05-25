@@ -1,15 +1,16 @@
+require("dotenv-expand")(require("dotenv").config());
 const jsonServer = require("json-server");
 const fs = require("fs");
 const path = require("path");
 const axios = require("axios");
 const auth = require("basic-auth");
-const dbFilePath = path.join(__dirname, "db.json");
+const dbFilePath = path.join(__dirname, process.env.JSON_DB_FILE);
 
 const jsonDBserverStructure = {
   users: [
     {
       id: 1,
-      userName: "admin",
+      userName: process.env.ADMIN_DB_USER_NAME,
       firstName: "Admin",
       lastName: "User",
     },
@@ -52,7 +53,7 @@ server.use(middlewares);
 server.use(async (req, res, next) => {
   if (req.headers["authorization"] === null) res.sendStatus(400);
   const user = auth.parse(req.headers["authorization"]);
-  const r = await axios.get("http://localhost:5000/verify_user", {
+  const r = await axios.get(`${process.env.SERVER_HOSTNAME}/verify_user`, {
     auth: {
       username: user.name,
       password: user.pass,
@@ -66,7 +67,7 @@ server.use(async (req, res, next) => {
   }
 });
 server.use(router);
-server.listen(3000, () => {
+server.listen(process.env.DB_PORT, () => {
   console.log("JSON Server is running");
-  console.log("http://localhost:3000");
+  console.log(process.env.DB_HOSTNAME);
 });
