@@ -12,3 +12,4 @@ venv.bak/
 pip-selfcheck.json
 
 server/db.sqlite
+db/db.json
