@@ -46,22 +46,6 @@ describe("TextBox", () => {
     expect(textBox.find(TextField).find("span").text()).toContain(product);
   });
 
-  it("Renders 4 rows when message mode", () => {
-    const rows = "4";
-    const textBox = mount(<TextBox id={"textBox"} message />);
-
-    expect(textBox).toMatchSnapshot();
-
-    expect(
-      textBox
-        .find(TextField)
-        .find(InputBase)
-        .find("textarea")
-        .getDOMNode()
-        .attributes.getNamedItem("rows")!.value
-    ).toBe(rows);
-  });
-
   it("Renders 1 rows when not message mode", () => {
     const rows = "1";
     const textBoxUser = mount(<TextBox id={"textBox"} user product={"name"} />);

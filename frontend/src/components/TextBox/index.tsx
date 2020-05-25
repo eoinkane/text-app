@@ -42,29 +42,37 @@ const useStyles = makeStyles((theme: Theme) =>
 const TextBox: React.FC<TextBoxProps> = ({ id, ...rest }) => {
   const classes = useStyles();
 
-  let rows = 1;
+  type textAreaProps = {
+    rows: number;
+  };
+
   let type: "password" | undefined = undefined;
   let product = "value";
   let multiline = true;
+  let textFieldProps: {} | textAreaProps;
 
   if ((rest as Object).hasOwnProperty("password")) {
     if ((rest as TextBoxPropsPassword).password) {
       product = "password";
       type = "password";
-      rows = 1;
       multiline = false;
+      textFieldProps = {
+        rows: 1,
+      };
     }
   } else if ((rest as Object).hasOwnProperty("user")) {
     if ((rest as TextBoxPropsUser).user) {
       product = (rest as TextBoxPropsUser).product;
-      rows = 1;
       multiline = true;
+      textFieldProps = {
+        rows: 1,
+      };
     }
   } else if ((rest as Object).hasOwnProperty("message")) {
     if ((rest as TextBoxPropsMessage).message) {
       product = "message";
-      rows = 4;
       multiline = true;
+      textFieldProps = {};
     }
   }
 
@@ -75,9 +83,9 @@ const TextBox: React.FC<TextBoxProps> = ({ id, ...rest }) => {
         id={id}
         label={`Enter your ${product} here`}
         multiline={multiline}
-        rows={rows}
         variant="outlined"
         type={type}
+        {...textFieldProps!}
       />
     </div>
   );
