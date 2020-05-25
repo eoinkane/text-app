@@ -2,11 +2,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:server": "python ./server/api.py",
-    "start:db": "concurrently \" nodemon ./db/index.js \" \"clear\""
+    "start:db": "nodemon -e js --ignore db/db.json ./db/index.js || clear"
   },
   "keywords": [],
   "author": "",
-  "main": "index.js",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
@@ -14,5 +13,10 @@
     "concurrently": "^5.2.0",
     "json-server": "^0.16.1",
     "nodemon": "^2.0.4"
+  },
+  "nodemonConfig": {
+    "events": {
+      "start": "clear"
+    }
   }
 }
