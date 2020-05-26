@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message Renders  1`] = `
+<div
+  className="makeStyles-root-1 makeStyles-left-2"
+>
+  <WithStyles(ForwardRef(Paper))
+    className="makeStyles-paper-4"
+    elevation={3}
+  >
+    <WithStyles(ForwardRef(Typography))>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. 
+    </WithStyles(ForwardRef(Typography))>
+  </WithStyles(ForwardRef(Paper))>
+</div>
+`;
+
+exports[`Message Renders  2`] = `
+<div
+  className="makeStyles-root-1 makeStyles-right-3"
+>
+  <WithStyles(ForwardRef(Paper))
+    className="makeStyles-paper-4"
+    elevation={3}
+  >
+    <WithStyles(ForwardRef(Typography))>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. 
+    </WithStyles(ForwardRef(Typography))>
+  </WithStyles(ForwardRef(Paper))>
+</div>
+`;
+
+exports[`Message Renders  3`] = `
+<div
+  className="makeStyles-root-1 makeStyles-left-2 makeStyles-right-3"
+>
+  <WithStyles(ForwardRef(Paper))
+    className="makeStyles-paper-4"
+    elevation={3}
+  >
+    <WithStyles(ForwardRef(Typography))>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. 
+    </WithStyles(ForwardRef(Typography))>
+  </WithStyles(ForwardRef(Paper))>
+</div>
+`;
+
+exports[`Message Renders at the left 1`] = `
+<div
+  className="makeStyles-root-1 makeStyles-left-2"
+>
+  <WithStyles(ForwardRef(Paper))
+    className="makeStyles-paper-4"
+    elevation={3}
+  >
+    <WithStyles(ForwardRef(Typography))>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. 
+    </WithStyles(ForwardRef(Typography))>
+  </WithStyles(ForwardRef(Paper))>
+</div>
+`;
+
+exports[`Message Renders at the right 1`] = `
+<div
+  className="makeStyles-root-1 makeStyles-right-3"
+>
+  <WithStyles(ForwardRef(Paper))
+    className="makeStyles-paper-4"
+    elevation={3}
+  >
+    <WithStyles(ForwardRef(Typography))>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. 
+    </WithStyles(ForwardRef(Typography))>
+  </WithStyles(ForwardRef(Paper))>
+</div>
+`;
+
+exports[`Message Renders with the correct text 1`] = `
+<div
+  className="makeStyles-root-1 makeStyles-left-2"
+>
+  <WithStyles(ForwardRef(Paper))
+    className="makeStyles-paper-4"
+    elevation={3}
+  >
+    <WithStyles(ForwardRef(Typography))>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. 
+    </WithStyles(ForwardRef(Typography))>
+  </WithStyles(ForwardRef(Paper))>
+</div>
+`;

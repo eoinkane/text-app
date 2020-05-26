@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageBox Renders  1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(Grid))
+    alignItems="flex-end"
+    container={true}
+    direction="row"
+    justify="flex-start"
+  >
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      xs={1}
+    >
+      <Avatar
+        user={
+          User {
+            "data": Object {
+              "firstName": "Jane",
+              "lastName": "Doe",
+            },
+          }
+        }
+      />
+    </WithStyles(ForwardRef(Grid))>
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      xs={11}
+    >
+      <Message
+        left={true}
+        right={false}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. 
+      </Message>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Grid))>
+</div>
+`;
+
+exports[`MessageBox Renders Avater on left for recieved messages 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(Grid))
+    alignItems="flex-end"
+    container={true}
+    direction="row"
+    justify="flex-start"
+  >
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      xs={1}
+    >
+      <Avatar
+        user={
+          User {
+            "data": Object {
+              "firstName": "Jane",
+              "lastName": "Doe",
+            },
+          }
+        }
+      />
+    </WithStyles(ForwardRef(Grid))>
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      xs={11}
+    >
+      <Message
+        left={true}
+        right={false}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. 
+      </Message>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Grid))>
+</div>
+`;
+
+exports[`MessageBox Renders Avater on right for sent messages 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(Grid))
+    alignItems="flex-end"
+    container={true}
+    direction="row"
+    justify="flex-start"
+  >
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      xs={11}
+    >
+      <Message
+        left={false}
+        right={true}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. 
+      </Message>
+    </WithStyles(ForwardRef(Grid))>
+    <WithStyles(ForwardRef(Grid))
+      className="makeStyles-rightAvatarGrid-2"
+      item={true}
+      xs={1}
+    >
+      <Avatar
+        user={
+          User {
+            "data": Object {
+              "firstName": "Jane",
+              "lastName": "Doe",
+            },
+          }
+        }
+      />
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Grid))>
+</div>
+`;
+
+exports[`MessageBox Renders the correct padding for right avatars 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(Grid))
+    alignItems="flex-end"
+    container={true}
+    direction="row"
+    justify="flex-start"
+  >
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      xs={11}
+    >
+      <Message
+        left={false}
+        right={true}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. 
+      </Message>
+    </WithStyles(ForwardRef(Grid))>
+    <WithStyles(ForwardRef(Grid))
+      className="makeStyles-rightAvatarGrid-2"
+      item={true}
+      xs={1}
+    >
+      <Avatar
+        user={
+          User {
+            "data": Object {
+              "firstName": "Jane",
+              "lastName": "Doe",
+            },
+          }
+        }
+      />
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Grid))>
+</div>
+`;
+
+exports[`MessageBox Renders the correct text 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(Grid))
+    alignItems="flex-end"
+    container={true}
+    direction="row"
+    justify="flex-start"
+  >
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      xs={1}
+    >
+      <Avatar
+        user={
+          User {
+            "data": Object {
+              "firstName": "Jane",
+              "lastName": "Doe",
+            },
+          }
+        }
+      />
+    </WithStyles(ForwardRef(Grid))>
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      xs={11}
+    >
+      <Message
+        left={true}
+        right={false}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. 
+      </Message>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Grid))>
+</div>
+`;

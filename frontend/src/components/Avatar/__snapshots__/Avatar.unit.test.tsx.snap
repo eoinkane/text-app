@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar Renders 1`] = `
+<Fragment>
+  <WithStyles(ForwardRef(Avatar))>
+    JD
+  </WithStyles(ForwardRef(Avatar))>
+</Fragment>
+`;
+
+exports[`Avatar Renders with correct text when first name & last name are passed 1`] = `
+<Fragment>
+  <WithStyles(ForwardRef(Avatar))>
+    JD
+  </WithStyles(ForwardRef(Avatar))>
+</Fragment>
+`;

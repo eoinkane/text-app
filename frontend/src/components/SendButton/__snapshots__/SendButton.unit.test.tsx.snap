@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SendButton Renders  1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(IconButton))
+    className="makeStyles-button-2"
+    onClick={[Function]}
+  >
+    <SendIcon />
+  </WithStyles(ForwardRef(IconButton))>
+</div>
+`;
+
+exports[`SendButton Renders Icon Button 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(IconButton))
+    className="makeStyles-button-2"
+    onClick={[Function]}
+  >
+    <SendIcon />
+  </WithStyles(ForwardRef(IconButton))>
+</div>
+`;
+
+exports[`SendButton Renders Send Icon 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(IconButton))
+    className="makeStyles-button-2"
+    onClick={[Function]}
+  >
+    <SendIcon />
+  </WithStyles(ForwardRef(IconButton))>
+</div>
+`;
