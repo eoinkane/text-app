@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import InboxMessage from "./index";
+import Typography from "@material-ui/core/Typography";
 
 import Message from "../../models/Message";
 import User from "../../models/User";
-import { Typography } from "@material-ui/core";
 
 describe("InboxMessage", () => {
   const currentUser = new User({ firstName: "Jane", lastName: "Doe" });
@@ -79,5 +79,24 @@ describe("InboxMessage", () => {
     expect(inboxMessage.find(Typography).last().text()).toBe(
       `${initials}: ${sentMessage.get("message")}`
     );
+  });
+
+  it("Applys the correct class for the secondary typography", () => {
+    const inboxMessage = mount(
+      <InboxMessage
+        recieved
+        currentUser={currentUser}
+        otherParticipant={otherParticipant}
+        message={recievedMessage}
+      />
+    );
+    expect(inboxMessage).toMatchSnapshot();
+
+    expect(
+      inboxMessage
+        .find(Typography)
+        .last()
+        .hasClass("makeStyles-messageTypography-3")
+    ).toBe(true);
   });
 });
