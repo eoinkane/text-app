@@ -1,0 +1,658 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InboxMessageBox Applys the correct class for the avatar grid 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(Container))
+    className="makeStyles-container-2"
+  >
+    <WithStyles(ForwardRef(Grid))
+      alignItems="flex-end"
+      container={true}
+      direction="row"
+      justify="flex-start"
+    >
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-avatarGrid-4"
+        item={true}
+        xs={11}
+      >
+        <Avatar
+          user={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+        />
+      </WithStyles(ForwardRef(Grid))>
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-inboxMessageGrid-3"
+        item={true}
+        xs={true}
+      >
+        <InboxMessage
+          currentUser={
+            User {
+              "data": Object {
+                "firstName": "Jane",
+                "lastName": "Doe",
+              },
+            }
+          }
+          message={
+            Message {
+              "data": Object {
+                "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. ",
+                "sender": User {
+                  "data": Object {
+                    "firstName": "Jane",
+                    "lastName": "Doe",
+                  },
+                },
+              },
+            }
+          }
+          otherParticipant={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+          recieved={false}
+          sent={true}
+        />
+      </WithStyles(ForwardRef(Grid))>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Container))>
+</div>
+`;
+
+exports[`InboxMessageBox Passes Avatar correct props 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(Container))
+    className="makeStyles-container-2"
+  >
+    <WithStyles(ForwardRef(Grid))
+      alignItems="flex-end"
+      container={true}
+      direction="row"
+      justify="flex-start"
+    >
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-avatarGrid-4"
+        item={true}
+        xs={11}
+      >
+        <Avatar
+          user={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+        />
+      </WithStyles(ForwardRef(Grid))>
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-inboxMessageGrid-3"
+        item={true}
+        xs={true}
+      >
+        <InboxMessage
+          currentUser={
+            User {
+              "data": Object {
+                "firstName": "Jane",
+                "lastName": "Doe",
+              },
+            }
+          }
+          message={
+            Message {
+              "data": Object {
+                "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. ",
+                "sender": User {
+                  "data": Object {
+                    "firstName": "Jane",
+                    "lastName": "Doe",
+                  },
+                },
+              },
+            }
+          }
+          otherParticipant={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+          recieved={false}
+          sent={true}
+        />
+      </WithStyles(ForwardRef(Grid))>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Container))>
+</div>
+`;
+
+exports[`InboxMessageBox Passes InboxMessage correct props 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(Container))
+    className="makeStyles-container-2"
+  >
+    <WithStyles(ForwardRef(Grid))
+      alignItems="flex-end"
+      container={true}
+      direction="row"
+      justify="flex-start"
+    >
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-avatarGrid-4"
+        item={true}
+        xs={11}
+      >
+        <Avatar
+          user={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+        />
+      </WithStyles(ForwardRef(Grid))>
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-inboxMessageGrid-3"
+        item={true}
+        xs={true}
+      >
+        <InboxMessage
+          currentUser={
+            User {
+              "data": Object {
+                "firstName": "Jane",
+                "lastName": "Doe",
+              },
+            }
+          }
+          message={
+            Message {
+              "data": Object {
+                "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. ",
+                "sender": User {
+                  "data": Object {
+                    "firstName": "Jane",
+                    "lastName": "Doe",
+                  },
+                },
+              },
+            }
+          }
+          otherParticipant={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+          recieved={false}
+          sent={true}
+        />
+      </WithStyles(ForwardRef(Grid))>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Container))>
+</div>
+`;
+
+exports[`InboxMessageBox Renders  1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(Container))
+    className="makeStyles-container-2"
+  >
+    <WithStyles(ForwardRef(Grid))
+      alignItems="flex-end"
+      container={true}
+      direction="row"
+      justify="flex-start"
+    >
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-avatarGrid-4"
+        item={true}
+        xs={11}
+      >
+        <Avatar
+          user={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+        />
+      </WithStyles(ForwardRef(Grid))>
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-inboxMessageGrid-3"
+        item={true}
+        xs={true}
+      >
+        <InboxMessage
+          currentUser={
+            User {
+              "data": Object {
+                "firstName": "Jane",
+                "lastName": "Doe",
+              },
+            }
+          }
+          message={
+            Message {
+              "data": Object {
+                "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. ",
+                "sender": User {
+                  "data": Object {
+                    "firstName": "Jane",
+                    "lastName": "Doe",
+                  },
+                },
+              },
+            }
+          }
+          otherParticipant={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+          recieved={false}
+          sent={true}
+        />
+      </WithStyles(ForwardRef(Grid))>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Container))>
+</div>
+`;
+
+exports[`InboxMessageBox Renders InboxMessage in recieved mode when last message is from otherParticipant 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(Container))
+    className="makeStyles-container-2"
+  >
+    <WithStyles(ForwardRef(Grid))
+      alignItems="flex-end"
+      container={true}
+      direction="row"
+      justify="flex-start"
+    >
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-avatarGrid-4"
+        item={true}
+        xs={11}
+      >
+        <Avatar
+          user={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+        />
+      </WithStyles(ForwardRef(Grid))>
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-inboxMessageGrid-3"
+        item={true}
+        xs={true}
+      >
+        <InboxMessage
+          currentUser={
+            User {
+              "data": Object {
+                "firstName": "Jane",
+                "lastName": "Doe",
+              },
+            }
+          }
+          message={
+            Message {
+              "data": Object {
+                "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. ",
+                "sender": User {
+                  "data": Object {
+                    "firstName": "John",
+                    "lastName": "Appleseed",
+                  },
+                },
+              },
+            }
+          }
+          otherParticipant={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+          recieved={true}
+          sent={false}
+        />
+      </WithStyles(ForwardRef(Grid))>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Container))>
+</div>
+`;
+
+exports[`InboxMessageBox Renders InboxMessage in sent mode when last message is from current user 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(Container))
+    className="makeStyles-container-2"
+  >
+    <WithStyles(ForwardRef(Grid))
+      alignItems="flex-end"
+      container={true}
+      direction="row"
+      justify="flex-start"
+    >
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-avatarGrid-4"
+        item={true}
+        xs={11}
+      >
+        <Avatar
+          user={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+        />
+      </WithStyles(ForwardRef(Grid))>
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-inboxMessageGrid-3"
+        item={true}
+        xs={true}
+      >
+        <InboxMessage
+          currentUser={
+            User {
+              "data": Object {
+                "firstName": "Jane",
+                "lastName": "Doe",
+              },
+            }
+          }
+          message={
+            Message {
+              "data": Object {
+                "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. ",
+                "sender": User {
+                  "data": Object {
+                    "firstName": "Jane",
+                    "lastName": "Doe",
+                  },
+                },
+              },
+            }
+          }
+          otherParticipant={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+          recieved={false}
+          sent={true}
+        />
+      </WithStyles(ForwardRef(Grid))>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Container))>
+</div>
+`;
+
+exports[`InboxMessageBox Renders a Avatar 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(Container))
+    className="makeStyles-container-2"
+  >
+    <WithStyles(ForwardRef(Grid))
+      alignItems="flex-end"
+      container={true}
+      direction="row"
+      justify="flex-start"
+    >
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-avatarGrid-4"
+        item={true}
+        xs={11}
+      >
+        <Avatar
+          user={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+        />
+      </WithStyles(ForwardRef(Grid))>
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-inboxMessageGrid-3"
+        item={true}
+        xs={true}
+      >
+        <InboxMessage
+          currentUser={
+            User {
+              "data": Object {
+                "firstName": "Jane",
+                "lastName": "Doe",
+              },
+            }
+          }
+          message={
+            Message {
+              "data": Object {
+                "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. ",
+                "sender": User {
+                  "data": Object {
+                    "firstName": "Jane",
+                    "lastName": "Doe",
+                  },
+                },
+              },
+            }
+          }
+          otherParticipant={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+          recieved={false}
+          sent={true}
+        />
+      </WithStyles(ForwardRef(Grid))>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Container))>
+</div>
+`;
+
+exports[`InboxMessageBox Renders a InboxMessage 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(Container))
+    className="makeStyles-container-2"
+  >
+    <WithStyles(ForwardRef(Grid))
+      alignItems="flex-end"
+      container={true}
+      direction="row"
+      justify="flex-start"
+    >
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-avatarGrid-4"
+        item={true}
+        xs={11}
+      >
+        <Avatar
+          user={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+        />
+      </WithStyles(ForwardRef(Grid))>
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-inboxMessageGrid-3"
+        item={true}
+        xs={true}
+      >
+        <InboxMessage
+          currentUser={
+            User {
+              "data": Object {
+                "firstName": "Jane",
+                "lastName": "Doe",
+              },
+            }
+          }
+          message={
+            Message {
+              "data": Object {
+                "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. ",
+                "sender": User {
+                  "data": Object {
+                    "firstName": "Jane",
+                    "lastName": "Doe",
+                  },
+                },
+              },
+            }
+          }
+          otherParticipant={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+          recieved={false}
+          sent={true}
+        />
+      </WithStyles(ForwardRef(Grid))>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Container))>
+</div>
+`;
+
+exports[`InboxMessageBox Renders the correct padding for InboxMessage grid 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(Container))
+    className="makeStyles-container-2"
+  >
+    <WithStyles(ForwardRef(Grid))
+      alignItems="flex-end"
+      container={true}
+      direction="row"
+      justify="flex-start"
+    >
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-avatarGrid-4"
+        item={true}
+        xs={11}
+      >
+        <Avatar
+          user={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+        />
+      </WithStyles(ForwardRef(Grid))>
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-inboxMessageGrid-3"
+        item={true}
+        xs={true}
+      >
+        <InboxMessage
+          currentUser={
+            User {
+              "data": Object {
+                "firstName": "Jane",
+                "lastName": "Doe",
+              },
+            }
+          }
+          message={
+            Message {
+              "data": Object {
+                "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. ",
+                "sender": User {
+                  "data": Object {
+                    "firstName": "Jane",
+                    "lastName": "Doe",
+                  },
+                },
+              },
+            }
+          }
+          otherParticipant={
+            User {
+              "data": Object {
+                "firstName": "John",
+                "lastName": "Appleseed",
+              },
+            }
+          }
+          recieved={false}
+          sent={true}
+        />
+      </WithStyles(ForwardRef(Grid))>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Container))>
+</div>
+`;
