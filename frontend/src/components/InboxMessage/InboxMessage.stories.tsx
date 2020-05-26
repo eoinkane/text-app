@@ -2,6 +2,8 @@ import React from "react";
 import InboxMessageComponent from "./index";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import Message from "../../models/Message";
+import User from "../../models/User";
 
 export default {
   title: "InboxMessage",
@@ -9,8 +11,21 @@ export default {
 };
 
 export const InboxMessage = () => {
-  const text =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. ";
+  const currentUser = new User({ firstName: "Jane", lastName: "Doe" });
+  const sentMessage = new Message({
+    sender: currentUser,
+    message:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. ",
+  });
+  const otherParticipant = new User({
+    firstName: "John",
+    lastName: "Appleseed",
+  });
+  const recievedMessage = new Message({
+    sender: otherParticipant,
+    message:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. ",
+  });
   return (
     <Container style={{ padding: "4vh 4vw" }}>
       <Typography
@@ -19,7 +34,7 @@ export const InboxMessage = () => {
           paddingBottom: 10,
         }}
       >
-        Inbox Message
+        Sent Inbox Message
       </Typography>
       <Container
         style={{
@@ -28,7 +43,35 @@ export const InboxMessage = () => {
           margin: "20px 0",
         }}
       >
-        <InboxMessageComponent>{text}</InboxMessageComponent>
+        <InboxMessageComponent
+          sent
+          currentUser={currentUser}
+          otherParticipant={otherParticipant}
+          message={sentMessage}
+        />
+      </Container>
+
+      <Typography
+        style={{
+          textAlign: "center",
+          paddingBottom: 10,
+        }}
+      >
+        Recieved Inbox Message
+      </Typography>
+      <Container
+        style={{
+          backgroundColor: "#f5f5f5",
+          padding: "20px 20px",
+          margin: "20px 0",
+        }}
+      >
+        <InboxMessageComponent
+          recieved
+          currentUser={currentUser}
+          otherParticipant={otherParticipant}
+          message={recievedMessage}
+        />
       </Container>
     </Container>
   );
