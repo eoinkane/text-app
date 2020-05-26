@@ -59,7 +59,8 @@ const InboxMessage: React.FC<InboxMessageProps> = ({
       ) as string;
       prefix = `${firstName[0]}${lastName[0]}`;
     }
-  } else if ((rest as Object).hasOwnProperty("sent")) {
+  }
+  if ((rest as Object).hasOwnProperty("sent")) {
     if ((rest as InboxMessageSent).sent) {
       prefix = `You`;
     }

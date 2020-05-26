@@ -63,7 +63,8 @@ const TextBox = React.forwardRef<Ref, TextBoxProps>(
           rows: 1,
         };
       }
-    } else if ((rest as Object).hasOwnProperty("user")) {
+    }
+    if ((rest as Object).hasOwnProperty("user")) {
       if ((rest as TextBoxPropsUser).user) {
         product = (rest as TextBoxPropsUser).product;
         multiline = true;
@@ -71,7 +72,8 @@ const TextBox = React.forwardRef<Ref, TextBoxProps>(
           rows: 1,
         };
       }
-    } else if ((rest as Object).hasOwnProperty("message")) {
+    }
+    if ((rest as Object).hasOwnProperty("message")) {
       if ((rest as TextBoxPropsMessage).message) {
         product = "message";
         multiline = true;
