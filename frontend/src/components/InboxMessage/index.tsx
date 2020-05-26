@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     messageTypography: {
       overflow: "hidden",
-      maxHeight: "2vh",
+      maxHeight: "3vh",
     },
   })
 );
