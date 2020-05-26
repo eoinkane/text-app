@@ -24,6 +24,8 @@ type TextBoxProps =
   | TextBoxPropsUser
   | TextBoxPropsPassword;
 
+type Ref = HTMLInputElement;
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -39,56 +41,59 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const TextBox: React.FC<TextBoxProps> = ({ id, ...rest }) => {
-  const classes = useStyles();
+const TextBox = React.forwardRef<Ref, TextBoxProps>(
+  ({ id, ...rest }, forwardRef) => {
+    const classes = useStyles();
 
-  type textAreaProps = {
-    rows: number;
-  };
+    type textAreaProps = {
+      rows: number;
+    };
 
-  let type: "password" | undefined = undefined;
-  let product = "value";
-  let multiline = true;
-  let textFieldProps: {} | textAreaProps;
+    let type: "password" | undefined = undefined;
+    let product = "value";
+    let multiline = true;
+    let textFieldProps: {} | textAreaProps;
 
-  if ((rest as Object).hasOwnProperty("password")) {
-    if ((rest as TextBoxPropsPassword).password) {
-      product = "password";
-      type = "password";
-      multiline = false;
-      textFieldProps = {
-        rows: 1,
-      };
+    if ((rest as Object).hasOwnProperty("password")) {
+      if ((rest as TextBoxPropsPassword).password) {
+        product = "password";
+        type = "password";
+        multiline = false;
+        textFieldProps = {
+          rows: 1,
+        };
+      }
+    } else if ((rest as Object).hasOwnProperty("user")) {
+      if ((rest as TextBoxPropsUser).user) {
+        product = (rest as TextBoxPropsUser).product;
+        multiline = true;
+        textFieldProps = {
+          rows: 1,
+        };
+      }
+    } else if ((rest as Object).hasOwnProperty("message")) {
+      if ((rest as TextBoxPropsMessage).message) {
+        product = "message";
+        multiline = true;
+        textFieldProps = {};
+      }
     }
-  } else if ((rest as Object).hasOwnProperty("user")) {
-    if ((rest as TextBoxPropsUser).user) {
-      product = (rest as TextBoxPropsUser).product;
-      multiline = true;
-      textFieldProps = {
-        rows: 1,
-      };
-    }
-  } else if ((rest as Object).hasOwnProperty("message")) {
-    if ((rest as TextBoxPropsMessage).message) {
-      product = "message";
-      multiline = true;
-      textFieldProps = {};
-    }
+
+    return (
+      <div className={classes.root}>
+        <TextField
+          className={classes.textField}
+          id={id}
+          inputRef={forwardRef}
+          label={`Enter your ${product} here`}
+          multiline={multiline}
+          variant="outlined"
+          type={type}
+          {...textFieldProps!}
+        />
+      </div>
+    );
   }
-
-  return (
-    <div className={classes.root}>
-      <TextField
-        className={classes.textField}
-        id={id}
-        label={`Enter your ${product} here`}
-        multiline={multiline}
-        variant="outlined"
-        type={type}
-        {...textFieldProps!}
-      />
-    </div>
-  );
-};
+);
 
 export default TextBox;
