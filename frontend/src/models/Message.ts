@@ -1,8 +1,9 @@
 import axios, { AxiosResponse } from "axios";
+import User from "./User";
 
 interface MessageProps {
   id?: number;
-  sender?: number;
+  sender?: User;
   message?: string;
   conversationsId?: number;
 }
