@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading Context Renders children 1`] = `
+<LoadingContextProvider>
+  <TestHelper>
+    <div>
+      <p>
+        false
+      </p>
+      <button
+        onClick={[Function]}
+      >
+        ON
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        OFF
+      </button>
+    </div>
+  </TestHelper>
+</LoadingContextProvider>
+`;
+
+exports[`Loading Reducer OFF action 1`] = `false`;
+
+exports[`Loading Reducer ON action 1`] = `true`;
