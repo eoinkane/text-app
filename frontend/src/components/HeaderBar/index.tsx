@@ -40,16 +40,16 @@ const ButtonAppBar: React.FC = () => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Link className={classes.link} to={"/"}>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-            >
-              <MenuIcon />
-            </IconButton>
-          </Link>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="menu"
+            component={Link}
+            to={"/"}
+          >
+            <MenuIcon />
+          </IconButton>
           <Typography variant="h6" className={classes.title}>
             Messages
           </Typography>

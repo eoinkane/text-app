@@ -4,10 +4,11 @@ import HeaderBar from "./index";
 
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import { MemoryRouter, Link } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 
 import { LoadingContext } from "./../../contexts/LoadingContext";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import IconButton from "@material-ui/core/IconButton";
 
 describe("HeaderBar", () => {
   it("Renders", () => {
@@ -34,7 +35,7 @@ describe("HeaderBar", () => {
       </MemoryRouter>
     );
 
-    headerBar.find(HeaderBar).dive().find(Link).simulate("click");
+    headerBar.find(HeaderBar).dive().find(IconButton).simulate("click");
 
     expect(window.location.pathname).toBe("/");
   });

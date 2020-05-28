@@ -45,19 +45,29 @@ exports[`HeaderBar Renders with correct text 1`] = `
     position="static"
   >
     <WithStyles(ForwardRef(Toolbar))>
-      <Link
-        className="makeStyles-link-5"
+      <WithStyles(ForwardRef(IconButton))
+        aria-label="menu"
+        className="makeStyles-menuButton-2"
+        color="inherit"
+        component={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "displayName": "Link",
+            "propTypes": Object {
+              "innerRef": [Function],
+              "onClick": [Function],
+              "replace": [Function],
+              "target": [Function],
+              "to": [Function],
+            },
+            "render": [Function],
+          }
+        }
+        edge="start"
         to="/"
       >
-        <WithStyles(ForwardRef(IconButton))
-          aria-label="menu"
-          className="makeStyles-menuButton-2"
-          color="inherit"
-          edge="start"
-        >
-          <MenuIcon />
-        </WithStyles(ForwardRef(IconButton))>
-      </Link>
+        <MenuIcon />
+      </WithStyles(ForwardRef(IconButton))>
       <WithStyles(ForwardRef(Typography))
         className="makeStyles-title-3"
         variant="h6"
