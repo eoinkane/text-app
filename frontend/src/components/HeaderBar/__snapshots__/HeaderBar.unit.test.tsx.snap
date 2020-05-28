@@ -46,7 +46,7 @@ exports[`HeaderBar Renders with correct text 1`] = `
   >
     <WithStyles(ForwardRef(Toolbar))>
       <Link
-        className="makeStyles-link-4"
+        className="makeStyles-link-5"
         to="/"
       >
         <WithStyles(ForwardRef(IconButton))

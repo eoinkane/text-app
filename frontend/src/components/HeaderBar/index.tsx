@@ -7,6 +7,9 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import CircularProgress from "@material-ui/core/CircularProgress";
+
+import { useLoading } from "../../contexts/LoadingContext";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -19,6 +22,10 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       flexGrow: 1,
     },
+    loadingSpinner: {
+      color: "#ffffff",
+      marginRight: theme.spacing(2),
+    },
     link: {
       color: "#fff",
     },
@@ -26,6 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const ButtonAppBar: React.FC = () => {
+  const { loading } = useLoading("ButtonAppBar");
   const classes = useStyles();
 
   return (
@@ -45,6 +53,9 @@ const ButtonAppBar: React.FC = () => {
           <Typography variant="h6" className={classes.title}>
             Messages
           </Typography>
+          {loading ? (
+            <CircularProgress className={classes.loadingSpinner} />
+          ) : null}
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>

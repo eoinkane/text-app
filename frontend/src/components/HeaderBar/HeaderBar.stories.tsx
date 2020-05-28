@@ -3,6 +3,12 @@ import HeaderBarComponent from "./index";
 import { linkTo } from "@storybook/addon-links";
 import StoryRouter from "storybook-react-router";
 
+import {
+  LoadingContextProvider,
+  useLoading,
+  types,
+} from "./../../contexts/LoadingContext";
+
 export default {
   title: "Header Bar",
   component: HeaderBarComponent,
@@ -13,4 +19,20 @@ export default {
   ],
 };
 
-export const HeaderBar = () => <HeaderBarComponent />;
+export const Default = () => (
+  <LoadingContextProvider>
+    <HeaderBarComponent />
+  </LoadingContextProvider>
+);
+
+const LoadingSpinnerOnHelper = () => {
+  const { dispatch } = useLoading("LoadingSpinner");
+  dispatch({ type: types.ON });
+  return <HeaderBarComponent />;
+};
+
+export const LoadingSpinnerOn = () => (
+  <LoadingContextProvider>
+    <LoadingSpinnerOnHelper />
+  </LoadingContextProvider>
+);
