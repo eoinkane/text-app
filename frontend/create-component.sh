@@ -31,14 +31,14 @@ varname_first=$varname_pascal_case:0:1
 varname_first_lower=$(echo $varname_pascal_case | tr '[:upper:]' '[:lower:]')
 varname_snake_case=$(echo $varname_pascal_case | sed "s/./$varname_first_lower/1")
 
-folder="./src/$choice_snake_case/$varname_pascal_case"
+folder="./src/$choice_plural/$varname_pascal_case"
 
 mkdir $folder
 
 cp ./src/templates/blank$choice_pascal_case/index.tsx $folder/index.tsx
 sed -i "s/Blank/$varname_pascal_case/g" $FOLDER/index.tsx
 
-if [ $choice_snake_case = "component"]
+if [ $choice_snake_case = "component" ]
 then
     cp ./src/templates/blank$choice_pascal_case/Blank.stories.tsx $folder/$varname_pascal_case.stories.tsx
     sed -i "s/Blank/$varname_pascal_case/g" $folder/$varname_pascal_case.stories.tsx

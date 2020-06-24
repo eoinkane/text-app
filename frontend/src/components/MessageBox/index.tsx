@@ -1,14 +1,14 @@
 import React from "react";
-import Avatar from "./../Avatar";
-import MessageComponent from "./../Message";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
 import User from "../../models/User";
 import Message from "../../models/Message";
-import { Grid } from "@material-ui/core";
+import MessageComponent from "./../Message";
+import Avatar from "./../Avatar";
+import { useCurrentUser } from "./../../contexts/CurrentUserContext";
 
 interface MessageBoxProps {
   sender: User;
-  currentUser: User;
   message: Message;
 }
 
@@ -19,17 +19,16 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: "10px 0",
     },
     rightAvatarGrid: {
+      marginLeft: "auto",
       flexBasis: 0,
     },
   })
 );
 
-const MessageBox: React.FC<MessageBoxProps> = ({
-  sender,
-  currentUser,
-  message,
-}) => {
+const MessageBox: React.FC<MessageBoxProps> = ({ sender, message }) => {
   const classes = useStyles();
+  const { currentUser } = useCurrentUser("MessageBox");
+
   const messageSentByCurrentUser = sender === currentUser;
   return (
     <div className={classes.root}>
@@ -54,7 +53,7 @@ const MessageBox: React.FC<MessageBoxProps> = ({
         </Grid>
         {messageSentByCurrentUser ? (
           <Grid className={classes.rightAvatarGrid} item xs={1}>
-            <Avatar user={sender} />
+            <Avatar user={currentUser!} />
           </Grid>
         ) : null}
       </Grid>

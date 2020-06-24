@@ -42,7 +42,12 @@ describe("HeaderBar", () => {
 
   it("Renders no loading spinner when loading is false", () => {
     const headerBar = mount(
-      <LoadingContext.Provider value={{ dispatch: () => {}, loading: false }}>
+      <LoadingContext.Provider
+        value={{
+          loadingActions: { ON: () => {}, OFF: () => {} },
+          loading: false,
+        }}
+      >
         <MemoryRouter keyLength={0}>
           <HeaderBar />
         </MemoryRouter>
@@ -54,7 +59,12 @@ describe("HeaderBar", () => {
 
   it("Renders a loading spinner when loading is true", () => {
     const headerBar = mount(
-      <LoadingContext.Provider value={{ dispatch: () => {}, loading: true }}>
+      <LoadingContext.Provider
+        value={{
+          loadingActions: { ON: () => {}, OFF: () => {} },
+          loading: true,
+        }}
+      >
         <MemoryRouter keyLength={0}>
           <HeaderBar />
         </MemoryRouter>

@@ -6,7 +6,6 @@ import StoryRouter from "storybook-react-router";
 import {
   LoadingContextProvider,
   useLoading,
-  types,
 } from "./../../contexts/LoadingContext";
 
 export default {
@@ -26,8 +25,8 @@ export const Default = () => (
 );
 
 const LoadingSpinnerOnHelper = () => {
-  const { dispatch } = useLoading("LoadingSpinner");
-  dispatch({ type: types.ON });
+  const { loadingActions } = useLoading("LoadingSpinner");
+  loadingActions.ON();
   return <HeaderBarComponent />;
 };
 

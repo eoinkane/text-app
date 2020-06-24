@@ -2,10 +2,9 @@ import React from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { Paper, ListItemText } from "@material-ui/core";
 import Message from "../../models/Message";
-import User from "../../models/User";
+import User from "../../models/User/";
 
 interface InboxMessageBase {
-  currentUser: User;
   otherParticipant: User;
   message: Message;
 }
@@ -37,7 +36,6 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const InboxMessage: React.FC<InboxMessageProps> = ({
-  currentUser,
   otherParticipant,
   message,
   ...rest

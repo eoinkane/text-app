@@ -2,14 +2,6 @@
 
 exports[`InboxMessage Applys the correct class for the secondary typography 1`] = `
 <InboxMessage
-  currentUser={
-    User {
-      "data": Object {
-        "firstName": "Jane",
-        "lastName": "Doe",
-      },
-    }
-  }
   message={
     Message {
       "data": Object {
@@ -17,7 +9,9 @@ exports[`InboxMessage Applys the correct class for the secondary typography 1`] 
         "sender": User {
           "data": Object {
             "firstName": "John",
+            "id": 0,
             "lastName": "Appleseed",
+            "username": "test",
           },
         },
       },
@@ -27,7 +21,9 @@ exports[`InboxMessage Applys the correct class for the secondary typography 1`] 
     User {
       "data": Object {
         "firstName": "John",
+        "id": 0,
         "lastName": "Appleseed",
+        "username": "test",
       },
     }
   }
@@ -249,14 +245,6 @@ exports[`InboxMessage Renders  1`] = `
 
 exports[`InboxMessage Renders with the correct text in recieved mode 1`] = `
 <InboxMessage
-  currentUser={
-    User {
-      "data": Object {
-        "firstName": "Jane",
-        "lastName": "Doe",
-      },
-    }
-  }
   message={
     Message {
       "data": Object {
@@ -264,7 +252,9 @@ exports[`InboxMessage Renders with the correct text in recieved mode 1`] = `
         "sender": User {
           "data": Object {
             "firstName": "John",
+            "id": 0,
             "lastName": "Appleseed",
+            "username": "test",
           },
         },
       },
@@ -274,7 +264,9 @@ exports[`InboxMessage Renders with the correct text in recieved mode 1`] = `
     User {
       "data": Object {
         "firstName": "John",
+        "id": 0,
         "lastName": "Appleseed",
+        "username": "test",
       },
     }
   }
@@ -475,14 +467,6 @@ exports[`InboxMessage Renders with the correct text in recieved mode 1`] = `
 
 exports[`InboxMessage Renders with the correct text in sent mode 1`] = `
 <InboxMessage
-  currentUser={
-    User {
-      "data": Object {
-        "firstName": "Jane",
-        "lastName": "Doe",
-      },
-    }
-  }
   message={
     Message {
       "data": Object {
@@ -490,7 +474,9 @@ exports[`InboxMessage Renders with the correct text in sent mode 1`] = `
         "sender": User {
           "data": Object {
             "firstName": "Jane",
+            "id": 0,
             "lastName": "Doe",
+            "username": "test",
           },
         },
       },
@@ -500,7 +486,9 @@ exports[`InboxMessage Renders with the correct text in sent mode 1`] = `
     User {
       "data": Object {
         "firstName": "John",
+        "id": 0,
         "lastName": "Appleseed",
+        "username": "test",
       },
     }
   }

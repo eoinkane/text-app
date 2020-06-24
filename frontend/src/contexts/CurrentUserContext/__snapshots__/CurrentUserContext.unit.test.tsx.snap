@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading Context Renders children 1`] = `
+<CurrentUserProvider>
+  <TestHelperParent>
+    <div>
+      <TestHelperChild1>
+        <TestHelperChild2
+          testProp={null}
+        />
+      </TestHelperChild1>
+    </div>
+  </TestHelperParent>
+</CurrentUserProvider>
+`;

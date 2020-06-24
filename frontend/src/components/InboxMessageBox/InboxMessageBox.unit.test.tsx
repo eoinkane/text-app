@@ -1,20 +1,30 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
+import Grid from "@material-ui/core/Grid";
 import InboxMessageBox from "./index";
 import Message from "../../models/Message";
 import User from "../../models/User";
 import Avatar from "../Avatar";
 import InboxMessage from "../InboxMessage";
-import { Grid } from "@material-ui/core";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 describe("InboxMessageBox", () => {
-  const currentUser = new User({ firstName: "Jane", lastName: "Doe" });
+  const currentUser = new User();
+  currentUser.init({
+    id: 0,
+    username: "test",
+    firstName: "Jane",
+    lastName: "Doe",
+  });
   const sentMessage = new Message({
     sender: currentUser,
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. ",
   });
-  const otherParticipant = new User({
+  const otherParticipant = new User();
+  otherParticipant.init({
+    id: 0,
+    username: "test",
     firstName: "John",
     lastName: "Appleseed",
   });
@@ -26,22 +36,36 @@ describe("InboxMessageBox", () => {
 
   it("Renders ", () => {
     const inboxMessageBox = shallow(
-      <InboxMessageBox
-        currentUser={currentUser}
-        otherParticipant={otherParticipant}
-        message={sentMessage}
-      />
+      <CurrentUserContext.Provider
+        value={{
+          currentUser: currentUser,
+          initUser: jest.fn(),
+          error: false,
+        }}
+      >
+        <InboxMessageBox
+          otherParticipant={otherParticipant}
+          message={sentMessage}
+        />
+      </CurrentUserContext.Provider>
     );
     expect(inboxMessageBox).toMatchSnapshot();
   });
 
   it("Renders a Avatar", () => {
-    const inboxMessageBox = shallow(
-      <InboxMessageBox
-        currentUser={currentUser}
-        otherParticipant={otherParticipant}
-        message={sentMessage}
-      />
+    const inboxMessageBox = mount(
+      <CurrentUserContext.Provider
+        value={{
+          currentUser: currentUser,
+          initUser: jest.fn(),
+          error: false,
+        }}
+      >
+        <InboxMessageBox
+          otherParticipant={otherParticipant}
+          message={sentMessage}
+        />
+      </CurrentUserContext.Provider>
     );
     expect(inboxMessageBox).toMatchSnapshot();
 
@@ -49,12 +73,19 @@ describe("InboxMessageBox", () => {
   });
 
   it("Renders a InboxMessage", () => {
-    const inboxMessageBox = shallow(
-      <InboxMessageBox
-        currentUser={currentUser}
-        otherParticipant={otherParticipant}
-        message={sentMessage}
-      />
+    const inboxMessageBox = mount(
+      <CurrentUserContext.Provider
+        value={{
+          currentUser: currentUser,
+          initUser: jest.fn(),
+          error: false,
+        }}
+      >
+        <InboxMessageBox
+          otherParticipant={otherParticipant}
+          message={sentMessage}
+        />
+      </CurrentUserContext.Provider>
     );
     expect(inboxMessageBox).toMatchSnapshot();
 
@@ -62,12 +93,19 @@ describe("InboxMessageBox", () => {
   });
 
   it("Renders InboxMessage in sent mode when last message is from current user", () => {
-    const inboxMessageBox = shallow(
-      <InboxMessageBox
-        currentUser={currentUser}
-        otherParticipant={otherParticipant}
-        message={sentMessage}
-      />
+    const inboxMessageBox = mount(
+      <CurrentUserContext.Provider
+        value={{
+          currentUser: currentUser,
+          initUser: jest.fn(),
+          error: false,
+        }}
+      >
+        <InboxMessageBox
+          otherParticipant={otherParticipant}
+          message={sentMessage}
+        />
+      </CurrentUserContext.Provider>
     );
     expect(inboxMessageBox).toMatchSnapshot();
 
@@ -76,12 +114,19 @@ describe("InboxMessageBox", () => {
   });
 
   it("Renders InboxMessage in recieved mode when last message is from otherParticipant", () => {
-    const inboxMessageBox = shallow(
-      <InboxMessageBox
-        currentUser={currentUser}
-        otherParticipant={otherParticipant}
-        message={recievedMessage}
-      />
+    const inboxMessageBox = mount(
+      <CurrentUserContext.Provider
+        value={{
+          currentUser: currentUser,
+          initUser: jest.fn(),
+          error: false,
+        }}
+      >
+        <InboxMessageBox
+          otherParticipant={otherParticipant}
+          message={recievedMessage}
+        />
+      </CurrentUserContext.Provider>
     );
     expect(inboxMessageBox).toMatchSnapshot();
 
@@ -90,18 +135,22 @@ describe("InboxMessageBox", () => {
   });
 
   it("Passes InboxMessage correct props", () => {
-    const inboxMessageBox = shallow(
-      <InboxMessageBox
-        currentUser={currentUser}
-        otherParticipant={otherParticipant}
-        message={sentMessage}
-      />
+    const inboxMessageBox = mount(
+      <CurrentUserContext.Provider
+        value={{
+          currentUser: currentUser,
+          initUser: jest.fn(),
+          error: false,
+        }}
+      >
+        <InboxMessageBox
+          otherParticipant={otherParticipant}
+          message={sentMessage}
+        />
+      </CurrentUserContext.Provider>
     );
     expect(inboxMessageBox).toMatchSnapshot();
 
-    expect(inboxMessageBox.find(InboxMessage).prop("currentUser")).toBe(
-      currentUser
-    );
     expect(inboxMessageBox.find(InboxMessage).prop("otherParticipant")).toBe(
       otherParticipant
     );
@@ -111,12 +160,19 @@ describe("InboxMessageBox", () => {
   });
 
   it("Passes Avatar correct props", () => {
-    const inboxMessageBox = shallow(
-      <InboxMessageBox
-        currentUser={currentUser}
-        otherParticipant={otherParticipant}
-        message={sentMessage}
-      />
+    const inboxMessageBox = mount(
+      <CurrentUserContext.Provider
+        value={{
+          currentUser: currentUser,
+          initUser: jest.fn(),
+          error: false,
+        }}
+      >
+        <InboxMessageBox
+          otherParticipant={otherParticipant}
+          message={sentMessage}
+        />
+      </CurrentUserContext.Provider>
     );
     expect(inboxMessageBox).toMatchSnapshot();
 
@@ -124,12 +180,19 @@ describe("InboxMessageBox", () => {
   });
 
   it("Applys the correct class for the avatar grid", () => {
-    const inboxMessage = shallow(
-      <InboxMessageBox
-        currentUser={currentUser}
-        otherParticipant={otherParticipant}
-        message={sentMessage}
-      />
+    const inboxMessage = mount(
+      <CurrentUserContext.Provider
+        value={{
+          currentUser: currentUser,
+          initUser: jest.fn(),
+          error: false,
+        }}
+      >
+        <InboxMessageBox
+          otherParticipant={otherParticipant}
+          message={sentMessage}
+        />
+      </CurrentUserContext.Provider>
     );
     expect(inboxMessage).toMatchSnapshot();
 
@@ -141,7 +204,6 @@ describe("InboxMessageBox", () => {
   it("Renders the correct padding for InboxMessage grid", () => {
     const inboxMessage = shallow(
       <InboxMessageBox
-        currentUser={currentUser}
         otherParticipant={otherParticipant}
         message={sentMessage}
       />

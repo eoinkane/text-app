@@ -3,12 +3,12 @@ import { mount } from "enzyme";
 import { useLoading, LoadingContextProvider, types, reducer } from "./index";
 
 const TestHelper = () => {
-  const { loading, dispatch } = useLoading("TestHelper");
+  const { loading, loadingActions } = useLoading("TestHelper");
   return (
     <div>
       <p>{loading ? "true" : "false"}</p>
-      <button onClick={() => dispatch({ type: types.ON })}>ON</button>
-      <button onClick={() => dispatch({ type: types.OFF })}>OFF</button>
+      <button onClick={loadingActions.ON}>ON</button>
+      <button onClick={loadingActions.OFF}>OFF</button>
     </div>
   );
 };

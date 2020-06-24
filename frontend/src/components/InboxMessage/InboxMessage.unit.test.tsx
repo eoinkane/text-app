@@ -1,22 +1,32 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import InboxMessage from "./index";
 import Typography from "@material-ui/core/Typography";
 
+import InboxMessage from "./index";
 import Message from "../../models/Message";
 import User from "../../models/User";
 
 describe("InboxMessage", () => {
-  const currentUser = new User({ firstName: "Jane", lastName: "Doe" });
+  const currentUser = new User();
+  currentUser.init({
+    id: 0,
+    username: "test",
+    firstName: "Jane",
+    lastName: "Doe",
+  });
   const sentMessage = new Message({
     sender: currentUser,
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. ",
   });
-  const otherParticipant = new User({
+  const otherParticipant = new User();
+  otherParticipant.init({
+    id: 0,
+    username: "test",
     firstName: "John",
     lastName: "Appleseed",
   });
+
   const recievedMessage = new Message({
     sender: otherParticipant,
     message:
@@ -27,7 +37,6 @@ describe("InboxMessage", () => {
     const inboxMessage = shallow(
       <InboxMessage
         sent
-        currentUser={currentUser}
         otherParticipant={otherParticipant}
         message={sentMessage}
       />
@@ -39,7 +48,6 @@ describe("InboxMessage", () => {
     const inboxMessage = mount(
       <InboxMessage
         sent
-        currentUser={currentUser}
         otherParticipant={otherParticipant}
         message={sentMessage}
       />
@@ -60,7 +68,6 @@ describe("InboxMessage", () => {
     const inboxMessage = mount(
       <InboxMessage
         recieved
-        currentUser={currentUser}
         otherParticipant={otherParticipant}
         message={recievedMessage}
       />
@@ -85,7 +92,6 @@ describe("InboxMessage", () => {
     const inboxMessage = mount(
       <InboxMessage
         recieved
-        currentUser={currentUser}
         otherParticipant={otherParticipant}
         message={recievedMessage}
       />

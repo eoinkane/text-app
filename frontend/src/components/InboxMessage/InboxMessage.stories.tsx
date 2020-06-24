@@ -11,13 +11,22 @@ export default {
 };
 
 export const InboxMessage = () => {
-  const currentUser = new User({ firstName: "Jane", lastName: "Doe" });
+  const currentUser = new User();
+  currentUser.init({
+    username: "test",
+    id: 0,
+    firstName: "Jane",
+    lastName: "Doe",
+  });
   const sentMessage = new Message({
     sender: currentUser,
     message:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu consequat dui. Vivamus arcu tellus, tristique at purus ut, sagittis volutpat justo. Phasellus imperdiet ex. ",
   });
-  const otherParticipant = new User({
+  const otherParticipant = new User();
+  otherParticipant.init({
+    username: "test",
+    id: 0,
     firstName: "John",
     lastName: "Appleseed",
   });
@@ -45,7 +54,6 @@ export const InboxMessage = () => {
       >
         <InboxMessageComponent
           sent
-          currentUser={currentUser}
           otherParticipant={otherParticipant}
           message={sentMessage}
         />
@@ -68,7 +76,6 @@ export const InboxMessage = () => {
       >
         <InboxMessageComponent
           recieved
-          currentUser={currentUser}
           otherParticipant={otherParticipant}
           message={recievedMessage}
         />

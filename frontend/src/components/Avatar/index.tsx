@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import User from "./../../models/User";
+import User from "../../models/User/";
 import { Avatar as MaterialUIAvatar } from "@material-ui/core";
 
 interface IAvatarProps {

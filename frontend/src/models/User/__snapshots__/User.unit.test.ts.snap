@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading Context New User by User.create 1`] = `Promise {}`;
+
+exports[`Loading Context New User by User.create 2`] = `
+User {
+  "data": Object {
+    "firstName": "test",
+    "id": 0,
+    "lastName": "user",
+    "username": "test_user",
+  },
+}
+`;
+
+exports[`Loading Context User get returns error when user data is undefined 1`] = `
+User {
+  "data": undefined,
+}
+`;
+
+exports[`Loading Context User get returns expected values 1`] = `
+User {
+  "data": Object {
+    "firstName": "test",
+    "id": 0,
+    "lastName": "user",
+    "username": "test_user",
+  },
+}
+`;

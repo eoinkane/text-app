@@ -7,9 +7,9 @@ import InboxMessage from "./../InboxMessage/";
 
 import User from "../../models/User";
 import Message from "../../models/Message";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 interface InboxMessageBoxProps {
-  currentUser: User;
   otherParticipant: User;
   message: Message;
 }
@@ -40,11 +40,11 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const InboxMessageBox: React.FC<InboxMessageBoxProps> = ({
-  currentUser,
   otherParticipant,
   message,
 }) => {
   const classes = useStyles();
+  const { currentUser } = useCurrentUser("InboxMessageBox");
 
   const messageSender = message.get("sender") as User;
   const sent = messageSender === currentUser;
@@ -64,7 +64,6 @@ const InboxMessageBox: React.FC<InboxMessageBoxProps> = ({
           </Grid>
           <Grid className={classes.inboxMessageGrid} item xs>
             <InboxMessage
-              currentUser={currentUser}
               otherParticipant={otherParticipant}
               sent={sent}
               recieved={recieved}
