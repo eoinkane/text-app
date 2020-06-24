@@ -1,8 +1,12 @@
 {
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart:server": "cat ../.env >> .env",
     "start:server": "python ./server/api.py",
+    "poststart:server": "head -n -$(wc -l ../.env) .env",
+    "prestart:db": "cat ../.env >> .env",
     "start:db": "nodemon -e js --ignore db/db.json ./db/index.js || clear",
+    "poststart:db": "head -n -$(wc -l ../.env) .env",
     "start:unsecure-db": "json-server --watch ./db/db.json "
   },
   "keywords": [],

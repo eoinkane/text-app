@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 import os
 import requests
+from basicauth import decode, DecodeError
 from flask import Flask, abort, request, jsonify, g
+from flask_cors import CORS, cross_origin
 from flask_sqlalchemy import SQLAlchemy
 from flask_httpauth import HTTPBasicAuth
 from passlib.apps import custom_app_context as pwd_context
@@ -14,11 +16,18 @@ ADMIN_DB_USER_PASSWORD=os.environ.get("ADMIN_DB_USER_PASSWORD")
 
 DB_HOSTNAME=os.environ.get("DB_HOSTNAME")
 
+TEST_USERNAME=os.environ.get("TEST_USERNAME")
+TEST_PASSWORD=os.environ.get("TEST_PASSWORD")
+TEST_USER_FIRST_NAME=os.environ.get("TEST_USER_FIRST_NAME")
+TEST_USER_LAST_NAME=os.environ.get("TEST_USER_LAST_NAME")
+
 # initialization
 app = Flask(__name__)
 app.config['SECRET_KEY'] = SECRET_KEY
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 # extensions
 db = SQLAlchemy(app)
@@ -48,21 +57,39 @@ def verify_password(username, password):
     return True
 
 @app.route("/verify_user", methods=['GET'])
+@cross_origin()
 @auth.login_required
 def verify_user():
     return jsonify({}), 200
 
 @app.route('/api/users', methods = ['POST'])
+@cross_origin()
 def new_user():
-    username = request.json.get('username')
-    password = request.json.get('password')
+    try:
+        encoded_str = request.headers.get("Authorization")
+        decoded_username, decoded_password = decode(encoded_str)
+        username = str(decoded_username)
+        password = str(decoded_password)
+    except DecodeError:
+        abort(401)
+
     first_name = request.json.get('firstName')
     last_name = request.json.get('lastName')
 
-    if username is None or password is None or first_name is None or last_name is None:
+    if first_name is None or last_name is None:
         abort(400) # missing arguments
     if User.query.filter_by(username = username).first() is not None:
         abort(400) # existing user
+
+    if (username == TEST_USERNAME and password == TEST_PASSWORD and first_name == TEST_USER_FIRST_NAME and last_name == TEST_USER_LAST_NAME):
+        return jsonify({
+            'id': 0,
+            'username': username,
+            'firstName': first_name,
+            'lastName' : last_name,
+        }), 201
+
+
     user = User(username = username, first_name = first_name, last_name = last_name)
     existing_user_request = requests.get(f"{DB_HOSTNAME}/users?userName={username}", auth=(str(ADMIN_DB_USER_NAME), str(ADMIN_DB_USER_PASSWORD)))
     if len((existing_user_request.json())) != 0:
