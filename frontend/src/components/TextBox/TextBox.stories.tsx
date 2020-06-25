@@ -30,7 +30,7 @@ export const TextBox = () => {
           margin: "20px 0",
         }}
       >
-        <TextBoxComponent id={"TextBoxID2"} user product={"email"} />
+        <TextBoxComponent id={"TextBoxID2"} user product={"username"} />
       </Container>
 
       <Typography style={{ textAlign: "center", paddingBottom: 10 }}>
