@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeaderBarComponent from "./index";
 import { linkTo } from "@storybook/addon-links";
 import StoryRouter from "storybook-react-router";
@@ -26,7 +26,9 @@ export const Default = () => (
 
 const LoadingSpinnerOnHelper = () => {
   const { loadingActions } = useLoading("LoadingSpinner");
-  loadingActions.ON();
+  useEffect(() => {
+    loadingActions.ON();
+  }, []);
   return <HeaderBarComponent />;
 };
 
