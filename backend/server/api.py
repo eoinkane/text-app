@@ -56,12 +56,18 @@ def verify_password(username, password):
     g.user = user
     return True
 
-@app.route("/verify_user", methods=['GET'])
+@app.route("/api/verify_user", methods=['GET'])
 @cross_origin()
 @auth.login_required
 def verify_user():
-    return jsonify({}), 200
+    return jsonify({
+        "username":g.user.username,
+        "firstName":g.user.first_name,
+        "lastName":g.user.last_name,
+        "id":g.user.id
+    }), 200
 
+@app.route('/api/create_user', methods = ['POST'])
 @app.route('/api/users', methods = ['POST'])
 @cross_origin()
 def new_user():
@@ -109,7 +115,12 @@ def new_user():
     db.session.add(user)
     db.session.commit()
 
-    return jsonify({ 'username': user.username }), 201
+    return jsonify({
+        "username":user.username,
+        "firstName":user.first_name,
+        "lastName":user.last_name,
+        "id":user.id
+    }), 201
 
 
 if __name__ == '__main__':

@@ -54,7 +54,7 @@ server.use(async (req, res, next) => {
   if (req.headers["authorization"] === null) res.sendStatus(400);
   const user = auth.parse(req.headers["authorization"]);
   if (!user) res.sendStatus(400);
-  const r = await axios.get(`${process.env.SERVER_HOSTNAME}/verify_user`, {
+  const r = await axios.get(`${process.env.SERVER_HOSTNAME}/api/verify_user`, {
     auth: {
       username: user.name,
       password: user.pass,
