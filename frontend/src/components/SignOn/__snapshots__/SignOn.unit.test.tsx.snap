@@ -1,3 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SignOn Renders  1`] = `<Fragment />`;
+exports[`SignOn Renders  1`] = `
+<Fragment>
+  <ForwardRef
+    id="Name"
+    product="Name"
+    user={true}
+  />
+</Fragment>
+`;
